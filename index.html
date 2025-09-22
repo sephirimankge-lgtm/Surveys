@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyHub | Share Your Opinion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 50%, #0085FF 100%);
+        }
+        .survey-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        input:checked + .slider {
+            background-color: #3B82F6;
+        }
+        input:checked + .slider:before {
+            transform: translateX(1.5rem);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i data-feather="clipboard" class="text-blue-500 mr-2"></i>
+                    <span class="text-xl font-semibold text-gray-900">SurveyHub</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-blue-600 font-medium">Home</a>
+                    <a href="#surveys" class="text-gray-500 hover:text-blue-600">Surveys</a>
+                    <a href="#create" class="text-gray-500 hover:text-blue-600">Create</a>
+                    <a href="#contact" class="text-gray-500 hover:text-blue-600">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Opinion Matters</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Participate in surveys that shape products, services, and policies. Get rewarded for your time.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#surveys" class="bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">
+                        Take a Survey
+                    </a>
+                    <a href="#create" class="bg-blue-800 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-900 transition">
+                        Create Survey
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Surveys Section -->
+    <div id="surveys" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Available Surveys</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Choose from our wide range of surveys covering various topics. Your responses help improve products and services.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Survey Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden survey-card transition duration-300" data-aos="fade-up">
+                <img src="http://static.photos/technology/640x360/1" alt="Technology Survey" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-sm text-blue-600 font-medium">Technology</span>
+                        <span class="text-sm text-gray-500">5 min</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Tech Preferences 2023</h3>
+                    <p class="text-gray-600 mb-4">Share your opinions on the latest tech products and services.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Reward: $1.50</span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition">
+                            Take Survey
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Survey Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden survey-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                <img src="http://static.photos/food/640x360/2" alt="Food Survey" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-sm text-green-600 font-medium">Food & Beverage</span>
+                        <span class="text-sm text-gray-500">8 min</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Dining Habits Survey</h3>
+                    <p class="text-gray-600 mb-4">Tell us about your eating habits and preferences.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Reward: $2.00</span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition">
+                            Take Survey
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Survey Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden survey-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                <img src="http://static.photos/travel/640x360/3" alt="Travel Survey" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-sm text-purple-600 font-medium">Travel</span>
+                        <span class="text-sm text-gray-500">10 min</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Post-Pandemic Travel</h3>
+                    <p class="text-gray-600 mb-4">How has your travel behavior changed after the pandemic?</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Reward: $2.50</span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition">
+                            Take Survey
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <button class="bg-gray-200 text-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-300 transition">
+                View All Surveys
+            </button>
+        </div>
+    </div>
+
+    <!-- Create Survey Section -->
+    <div id="create" class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Create Your Own Survey</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Easily create professional surveys with our intuitive builder and collect responses in minutes.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-semibold mb-6">Survey Builder</h3>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Survey Title</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter survey title">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Survey Description</label>
+                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3" placeholder="Describe your survey"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Survey Category</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Select a category</option>
+                                <option>Technology</option>
+                                <option>Food & Beverage</option>
+                                <option>Travel</option>
+                                <option>Health</option>
+                                <option>Education</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <button class="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">
+                                Add Question
+                            </button>
+                            <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-md font-medium hover:bg-gray-300 transition">
+                                Preview
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-gray-50 p-8 md:p-12">
+                        <h3 class="text-xl font-semibold mb-6">Question Preview</h3>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                            <h4 class="font-medium mb-4">1. How satisfied are you with our product?</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <input type="radio" id="very-satisfied" name="satisfaction" class="mr-2">
+                                    <label for="very-satisfied">Very satisfied</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="satisfied" name="satisfaction" class="mr-2">
+                                    <label for="satisfied">Satisfied</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="neutral" name="satisfaction" class="mr-2">
+                                    <label for="neutral">Neutral</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="dissatisfied" name="satisfaction" class="mr-2">
+                                    <label for="dissatisfied">Dissatisfied</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="very-dissatisfied" name="satisfaction" class="mr-2">
+                                    <label for="very-dissatisfied">Very dissatisfied</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="font-medium mb-4">2. What features would you like to see in future updates?</h4>
+                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3" placeholder="Your answer"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="px-8 py-6 bg-gray-50 border-t border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="email-results" class="mr-2">
+                            <label for="email-results">Email me the results</label>
+                        </div>
+                        <button class="bg-green-600 text-white px-6 py-2 rounded-md font-medium hover:bg-green-700 transition">
+                            Publish Survey
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Have questions or feedback? We'd love to hear from you.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Doe">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@example.com">
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="How can we help?">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your message"></textarea>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition w-full">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div data-aos="fade-left">
+                <div class="bg-gray-50 p-8 rounded-lg h-full">
+                    <h3 class="text-xl font-semibold mb-6">Get in Touch</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i data-feather="mail" class="text-blue-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Email</h4>
+                                <p class="text-gray-600">support@surveyhub.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i data-feather="phone" class="text-blue-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i data-feather="map-pin" class="text-blue-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Address</h4>
+                                <p class="text-gray-600">123 Survey Street<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium text-gray-900 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i data-feather="facebook"></i>
+                            </a>
+                            <a href="#" class="text-blue-400 hover:text-blue-600">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="text-pink-600 hover:text-pink-800">
+                                <i data-feather="instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-900 hover:text-gray-700">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">SurveyHub</h3>
+                    <p class="text-gray-400">
+                        Connecting businesses with valuable consumer insights through powerful survey tools.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#surveys" class="text-gray-400 hover:text-white transition">Surveys</a></li>
+                        <li><a href="#create" class="text-gray-400 hover:text-white transition">Create</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subscribe</h4>
+                    <p class="text-gray-400 mb-4">
+                        Stay updated with our latest surveys and features.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md text-gray-900 w-full focus:outline-none">
+                        <button class="bg-blue-600 px-4 py-2 rounded-r-md hover:bg-blue-700 transition">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">
+                    © 2023 SurveyHub. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="credit-card"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="shield"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="globe"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
