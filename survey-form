@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form | SurveyHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .progress-bar {
+            height: 6px;
+            background-color: #E5E7EB;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        .question-card {
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i data-feather="clipboard" class="text-blue-500 mr-2"></i>
+                    <span class="text-xl font-semibold text-gray-900">SurveyHub</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-gray-600 mr-4 hidden sm:inline">Tech Preferences 2023</span>
+                    <div class="flex items-center bg-blue-50 px-3 py-1 rounded-full">
+                        <i data-feather="clock" class="text-blue-500 mr-1 w-4 h-4"></i>
+                        <span class="text-blue-600 text-sm">5 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="bg-white py-2 shadow-sm">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-1">
+                <span class="text-sm text-gray-600">25% complete</span>
+                <span class="text-sm text-gray-600">Question 1 of 4</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Survey Content -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden question-card mb-8">
+            <div class="p-6 sm:p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-900">Tech Preferences Survey</h2>
+                        <p class="text-gray-600 mt-1">Your answers will help shape future technology products</p>
+                    </div>
+                    <div class="bg-blue-50 px-3 py-1 rounded-full">
+                        <span class="text-blue-600 text-sm">Required</span>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">1. Which smartphone brand do you currently use?</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <input type="radio" id="apple" name="smartphone" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                <label for="apple" class="ml-3 block text-gray-700">Apple</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="samsung" name="smartphone" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                <label for="samsung" class="ml-3 block text-gray-700">Samsung</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="google" name="smartphone" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                <label for="google" class="ml-3 block text-gray-700">Google</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="oneplus" name="smartphone" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                <label for="oneplus" class="ml-3 block text-gray-700">OnePlus</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="other" name="smartphone" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                <label for="other" class="ml-3 block text-gray-700">Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">2. How often do you upgrade your smartphone?</h3>
+                        <select class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                            <option>Select an option</option>
+                            <option>Every year</option>
+                            <option>Every 2 years</option>
+                            <option>Every 3 years</option>
+                            <option>Every 4 years or more</option>
+                            <option>Only when my current phone breaks</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">3. What features are most important to you in a smartphone? (Select up to 3)</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <input type="checkbox" id="camera" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 mt-1">
+                                <label for="camera" class="ml-3 block text-gray-700">Camera quality</label>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="battery" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 mt-1">
+                                <label for="battery" class="ml-3 block text-gray-700">Battery life</label>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="performance" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 mt-1">
+                                <label for="performance" class="ml-3 block text-gray-700">Performance/speed</label>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="design" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 mt-1">
+                                <label for="design" class="ml-3 block text-gray-700">Design/build quality</label>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="price" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 mt-1">
+                                <label for="price" class="ml-3 block text-gray-700">Price/value</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">4. What would you like to see improved in future smartphone models?</h3>
+                        <textarea rows="4" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your suggestions..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Results Option -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="p-6 sm:p-8">
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="email-results" name="email-results" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="email-results" class="font-medium text-gray-700">Email me a copy of my responses</label>
+                        <p class="text-gray-500">We'll send your answers to the email address you provide below</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4 ml-7">
+                    <input type="email" id="email" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="your@email.com">
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between">
+            <button class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <i data-feather="chevron-left" class="mr-2 w-4 h-4"></i>
+                Previous
+            </button>
+            <button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Next
+                <i data-feather="chevron-right" class="ml-2 w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">
+                    © 2023 SurveyHub. All responses are anonymous unless you choose to provide your email.
+                </p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm mr-4">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
